@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aiun IT Labs — Home</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-
-  <header>
-    <div class="container header-container">
-      <h1>Aiun IT Labs</h1>
-      <nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <a href="index.html">Aiun IT Labs</a>
+      </div>
+      <nav class="site-nav">
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
@@ -26,33 +27,50 @@
   <main>
     <section class="hero">
       <div class="container">
-        <h2>Welcome to Aiun IT Labs</h2>
+        <h1>Welcome to Aiun IT Labs</h1>
         <p>Your partner in digital solutions and growth.</p>
       </div>
     </section>
 
-    <section class="services-preview">
+    <section class="intro">
+      <div class="container">
+        <h2>Who We Are</h2>
+        <p>Aiun IT Labs is dedicated to delivering cutting-edge IT & digital services — from web development to marketing solutions. We believe in strong client relationships, innovative design, and quality delivery.</p>
+      </div>
+    </section>
+
+    <section class="services-summary">
       <div class="container">
         <h2>Our Services</h2>
-        <div class="services-grid">
-          <!-- Example service card -->
-          <div class="service-card">
+        <div class="grid services-grid">
+          <div class="card">
             <h3>Web Development</h3>
-            <p>Building responsive and beautiful websites.</p>
+            <p>Responsive, modern websites that perform.</p>
           </div>
-          <!-- more service cards -->
+          <div class="card">
+            <h3>Digital Marketing</h3>
+            <p>Grow your online presence and reach.</p>
+          </div>
+          <div class="card">
+            <h3>Consulting & Support</h3>
+            <p>Expert guidance and ongoing maintenance.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- more sections as needed -->
+    <section class="call-to-action">
+      <div class="container">
+        <h2>Ready to start a project?</h2>
+        <a href="contact.html" class="btn">Get in Touch</a>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <div class="container footer-container">
+  <footer class="site-footer">
+    <div class="container">
       <p>&copy; 2025 Aiun IT Labs. All rights reserved.</p>
     </div>
   </footer>
-
 </body>
 </html>
