@@ -1,0 +1,38 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { DefaultProviders } from "./components/providers/default.tsx";
+import AuthCallback from "./pages/auth/Callback.tsx";
+import Home from "./pages/Home.tsx";
+import About from "./pages/About.tsx";
+import Contact from "./pages/Contact.tsx";
+import SoftwareDevelopment from "./pages/services/SoftwareDevelopment.tsx";
+import Infrastructure from "./pages/services/Infrastructure.tsx";
+import DigitalMarketing from "./pages/services/DigitalMarketing.tsx";
+import ComputerSales from "./pages/services/ComputerSales.tsx";
+import Investments from "./pages/services/Investments.tsx";
+import CurrentOfferings from "./pages/trainings/CurrentOfferings.tsx";
+import UpcomingPrograms from "./pages/trainings/UpcomingPrograms.tsx";
+import NotFound from "./pages/NotFound.tsx";
+
+export default function App() {
+  return (
+    <DefaultProviders>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/services/software-development" element={<SoftwareDevelopment />} />
+          <Route path="/services/infrastructure" element={<Infrastructure />} />
+          <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
+          <Route path="/services/computer-sales" element={<ComputerSales />} />
+          <Route path="/services/investments" element={<Investments />} />
+          <Route path="/trainings/current" element={<CurrentOfferings />} />
+          <Route path="/trainings/upcoming" element={<UpcomingPrograms />} />
+          <Route path="/auth/callback" element={<AuthCallback />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </DefaultProviders>
+  );
+}

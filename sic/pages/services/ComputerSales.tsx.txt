@@ -1,0 +1,145 @@
+import { Button } from "@/components/ui/button.tsx";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card.tsx";
+import Header from "@/components/Header.tsx";
+import Footer from "@/components/Footer.tsx";
+import { Link } from "react-router-dom";
+import { Monitor, Laptop, HardDrive, Wrench, ShoppingCart, RefreshCw } from "lucide-react";
+
+export default function ComputerSales() {
+  const services = [
+    {
+      icon: Monitor,
+      title: "Desktop Systems",
+      description: "High-performance desktop computers for business and personal use",
+    },
+    {
+      icon: Laptop,
+      title: "Laptops & Notebooks",
+      description: "Wide range of laptops from leading brands",
+    },
+    {
+      icon: HardDrive,
+      title: "Hardware & Accessories",
+      description: "Quality computer components, peripherals, and accessories",
+    },
+    {
+      icon: Wrench,
+      title: "Repair Services",
+      description: "Professional computer repair and maintenance services",
+    },
+    {
+      icon: RefreshCw,
+      title: "Upgrades",
+      description: "Hardware upgrades to improve your system's performance",
+    },
+    {
+      icon: ShoppingCart,
+      title: "Custom Builds",
+      description: "Custom-built systems tailored to your specific requirements",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1">
+        <section className="py-20 bg-gradient-to-b from-primary/5 to-background">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center space-y-6">
+              <h1 className="text-4xl md:text-5xl font-bold text-balance">
+                Computer Sales & Service
+              </h1>
+              <p className="text-xl text-muted-foreground">
+                Quality hardware and professional maintenance services
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto mb-16">
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Aiun IT Labs offers a complete range of computer sales and service solutions.
+                Whether you need new hardware, repairs, or upgrades, our experienced team
+                provides expert advice and quality products to meet your computing needs. We
+                work with leading brands and offer competitive pricing on all our products and
+                services.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {services.map((service) => {
+                const Icon = service.icon;
+                return (
+                  <Card key={service.title}>
+                    <CardHeader>
+                      <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary mb-4">
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <CardTitle>{service.title}</CardTitle>
+                      <CardDescription>{service.description}</CardDescription>
+                    </CardHeader>
+                  </Card>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-muted/50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold mb-8 text-center">Why Buy From Us?</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-4">
+                  <h3 className="text-xl font-semibold">Quality Products</h3>
+                  <p className="text-muted-foreground">
+                    We only sell genuine products from trusted manufacturers with full
+                    warranty support.
+                  </p>
+                </div>
+                <div className="space-y-4">
+                  <h3 className="text-xl font-semibold">Expert Guidance</h3>
+                  <p className="text-muted-foreground">
+                    Our team helps you choose the right products based on your needs and
+                    budget.
+                  </p>
+                </div>
+                <div className="space-y-4">
+                  <h3 className="text-xl font-semibold">Fast Service</h3>
+                  <p className="text-muted-foreground">
+                    Quick turnaround times for repairs and maintenance services.
+                  </p>
+                </div>
+                <div className="space-y-4">
+                  <h3 className="text-xl font-semibold">Competitive Pricing</h3>
+                  <p className="text-muted-foreground">
+                    Best prices on hardware and services without compromising on quality.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-primary text-primary-foreground">
+          <div className="container mx-auto px-4 text-center">
+            <div className="max-w-3xl mx-auto space-y-6">
+              <h2 className="text-3xl md:text-4xl font-bold">
+                Need New Hardware or Repairs?
+              </h2>
+              <p className="text-lg opacity-90">
+                Contact us for a quote or to schedule a service appointment
+              </p>
+              <Button asChild size="lg" variant="secondary">
+                <Link to="/contact">Contact Us</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+}

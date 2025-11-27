@@ -1,0 +1,147 @@
+import { Button } from "@/components/ui/button.tsx";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card.tsx";
+import Header from "@/components/Header.tsx";
+import Footer from "@/components/Footer.tsx";
+import { Link } from "react-router-dom";
+import { TrendingUp, PieChart, LineChart, Shield, Target, Briefcase } from "lucide-react";
+
+export default function Investments() {
+  const services = [
+    {
+      icon: TrendingUp,
+      title: "Investment Advisory",
+      description: "Expert guidance on investment opportunities and strategies",
+    },
+    {
+      icon: PieChart,
+      title: "Portfolio Management",
+      description: "Professional management of diversified investment portfolios",
+    },
+    {
+      icon: LineChart,
+      title: "Market Analysis",
+      description: "In-depth market research and analysis for informed decisions",
+    },
+    {
+      icon: Shield,
+      title: "Risk Management",
+      description: "Strategies to protect and grow your investments",
+    },
+    {
+      icon: Target,
+      title: "Financial Planning",
+      description: "Comprehensive financial planning for long-term success",
+    },
+    {
+      icon: Briefcase,
+      title: "Business Investments",
+      description: "Strategic investment opportunities in technology ventures",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1">
+        <section className="py-20 bg-gradient-to-b from-primary/5 to-background">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center space-y-6">
+              <h1 className="text-4xl md:text-5xl font-bold text-balance">
+                Investment Solutions
+              </h1>
+              <p className="text-xl text-muted-foreground">
+                Smart investment strategies for sustainable growth and financial success
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto mb-16">
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Aiun IT Labs offers comprehensive investment solutions combining our deep
+                understanding of technology markets with proven financial strategies. Whether
+                you're looking to grow your personal wealth or explore business investment
+                opportunities, our team provides the expertise and insights you need to make
+                informed decisions.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {services.map((service) => {
+                const Icon = service.icon;
+                return (
+                  <Card key={service.title}>
+                    <CardHeader>
+                      <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary mb-4">
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <CardTitle>{service.title}</CardTitle>
+                      <CardDescription>{service.description}</CardDescription>
+                    </CardHeader>
+                  </Card>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-muted/50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold mb-8 text-center">Our Investment Philosophy</h2>
+              <div className="space-y-8">
+                <div>
+                  <h3 className="text-xl font-semibold mb-3">Long-term Focus</h3>
+                  <p className="text-muted-foreground">
+                    We prioritize sustainable growth strategies over short-term gains,
+                    focusing on building lasting value.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-3">Diversification</h3>
+                  <p className="text-muted-foreground">
+                    Smart diversification across sectors and asset classes to manage risk
+                    while maximizing returns.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-3">Technology Expertise</h3>
+                  <p className="text-muted-foreground">
+                    Leveraging our IT industry knowledge to identify promising technology
+                    investment opportunities.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-3">Transparent Communication</h3>
+                  <p className="text-muted-foreground">
+                    Regular updates and clear communication about investment performance and
+                    strategy adjustments.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-primary text-primary-foreground">
+          <div className="container mx-auto px-4 text-center">
+            <div className="max-w-3xl mx-auto space-y-6">
+              <h2 className="text-3xl md:text-4xl font-bold">
+                Ready to Grow Your Investments?
+              </h2>
+              <p className="text-lg opacity-90">
+                Schedule a consultation to discuss your investment goals and opportunities
+              </p>
+              <Button asChild size="lg" variant="secondary">
+                <Link to="/contact">Schedule Consultation</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+}

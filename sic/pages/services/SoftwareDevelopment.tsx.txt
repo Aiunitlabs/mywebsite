@@ -1,0 +1,150 @@
+import { Button } from "@/components/ui/button.tsx";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card.tsx";
+import Header from "@/components/Header.tsx";
+import Footer from "@/components/Footer.tsx";
+import { Link } from "react-router-dom";
+import { Code, Globe, Smartphone, Database, Cloud, Settings } from "lucide-react";
+
+export default function SoftwareDevelopment() {
+  const offerings = [
+    {
+      icon: Globe,
+      title: "Web Development",
+      description: "Modern, responsive websites and web applications built with cutting-edge technologies",
+    },
+    {
+      icon: Smartphone,
+      title: "Mobile Applications",
+      description: "Native and cross-platform mobile apps for iOS and Android",
+    },
+    {
+      icon: Database,
+      title: "Database Solutions",
+      description: "Robust database design, optimization, and management services",
+    },
+    {
+      icon: Cloud,
+      title: "Cloud Applications",
+      description: "Scalable cloud-based solutions for modern business needs",
+    },
+    {
+      icon: Settings,
+      title: "API Development",
+      description: "RESTful APIs and integrations for seamless system connectivity",
+    },
+    {
+      icon: Code,
+      title: "Custom Solutions",
+      description: "Tailored software solutions designed specifically for your business",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1">
+        <section className="py-20 bg-gradient-to-b from-primary/5 to-background">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center space-y-6">
+              <h1 className="text-4xl md:text-5xl font-bold text-balance">
+                Software Development
+              </h1>
+              <p className="text-xl text-muted-foreground">
+                Custom software solutions that drive business innovation and growth
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto mb-16">
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                At Aiun IT Labs, we specialize in creating custom software solutions that
+                perfectly align with your business objectives. Our experienced development
+                team uses the latest technologies and best practices to build scalable,
+                secure, and user-friendly applications that give you a competitive edge.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {offerings.map((offering) => {
+                const Icon = offering.icon;
+                return (
+                  <Card key={offering.title}>
+                    <CardHeader>
+                      <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary mb-4">
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <CardTitle>{offering.title}</CardTitle>
+                      <CardDescription>{offering.description}</CardDescription>
+                    </CardHeader>
+                  </Card>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-muted/50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold mb-8 text-center">Our Development Process</h2>
+              <div className="space-y-6">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>1. Discovery & Planning</CardTitle>
+                    <CardDescription>
+                      We start by understanding your business needs, goals, and technical requirements
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+                <Card>
+                  <CardHeader>
+                    <CardTitle>2. Design & Prototyping</CardTitle>
+                    <CardDescription>
+                      Creating intuitive designs and interactive prototypes for your approval
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+                <Card>
+                  <CardHeader>
+                    <CardTitle>3. Development & Testing</CardTitle>
+                    <CardDescription>
+                      Building robust software with rigorous testing at every stage
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+                <Card>
+                  <CardHeader>
+                    <CardTitle>4. Deployment & Support</CardTitle>
+                    <CardDescription>
+                      Smooth deployment and ongoing maintenance to ensure optimal performance
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-primary text-primary-foreground">
+          <div className="container mx-auto px-4 text-center">
+            <div className="max-w-3xl mx-auto space-y-6">
+              <h2 className="text-3xl md:text-4xl font-bold">
+                Ready to Build Your Software?
+              </h2>
+              <p className="text-lg opacity-90">
+                Let's discuss your project and create a solution that exceeds your expectations
+              </p>
+              <Button asChild size="lg" variant="secondary">
+                <Link to="/contact">Start Your Project</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+}
