@@ -5,169 +5,113 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Careers — Aiun IT Labs</title>
   <meta name="description" content="Careers at Aiun IT Labs — open roles and how to apply." />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header" role="banner">
-  <div class="container header-inner">
-    <a class="brand" href="index.html">
-      
-      <span class="brand-text">Aiun IT Labs</span>
-    </a>
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Aiun IT Labs homepage">
+        <span class="brand-text">Aiun IT Labs</span>
+      </a>
 
-    <nav class="main-nav" role="navigation" aria-label="Main navigation" data-visible="false">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        
+      <nav id="main-nav" class="main-nav" role="navigation" aria-label="Main navigation" data-visible="false" aria-hidden="true">
+        <ul class="nav-list" role="menubar" aria-label="Primary menu">
+          <li role="none"><a role="menuitem" href="index.html">Home</a></li>
+          <li role="none"><a role="menuitem" href="about.html">About Us</a></li>
 
+          <!-- SERVICES — keyboard-friendly flyout with animated submenus -->
+          <li class="has-submenu" role="none">
+            <button class="submenu-toggle" aria-expanded="false" aria-controls="submenu-services" aria-haspopup="true">Services ▾</button>
+            <ul id="submenu-services" class="submenu" role="menu" aria-label="Services submenu">
+              <li class="has-submenu" role="none">
+                <button class="submenu-toggle" aria-expanded="false" aria-controls="submenu-training" aria-haspopup="true">Computer Training &amp; Internship ▸</button>
+                <ul id="submenu-training" class="submenu level-2" role="menu" aria-label="Computer Training submenu">
+                  <li role="none"><a role="menuitem" href="services.html#basic">Basics to Advanced</a></li>
+                  <li role="none"><a role="menuitem" href="services.html#nontech">Non-Technical</a></li>
+                  <li role="none"><a role="menuitem" href="services.html#tech">Technical</a></li>
+                  <li role="none"><a role="menuitem" href="services.html#accounts">Accounting</a></li>
+                  <li role="none"><a role="menuitem" href="services.html#web">Web Designing</a></li>
+                  <li role="none"><a role="menuitem" href="services.html#multimedia">Multimedia &amp; Animation</a></li>
+                </ul>
+              </li>
 
-<li class="dropdown">
-  <a href="services.html">Services ▾</a>
-  <ul class="dropdown-menu">
+              <li class="has-submenu" role="none">
+                <button class="submenu-toggle" aria-expanded="false" aria-controls="submenu-software" aria-haspopup="true">Software Development ▸</button>
+                <ul id="submenu-software" class="submenu level-2" role="menu" aria-label="Software Development submenu">
+                  <li role="none"><a role="menuitem" href="services.html#apps">App Development</a></li>
+                  <li role="none"><a role="menuitem" href="services.html#projects">Local &amp; Non‑Local Projects</a></li>
+                  <li role="none"><a role="menuitem" href="services.html#programming">Programming Services</a></li>
+                  <li role="none"><a role="menuitem" href="services.html#database">Database Development</a></li>
+                  <li role="none"><a role="menuitem" href="services.html#graphics">Graphics &amp; Animation</a></li>
+                  <li role="none"><a role="menuitem" href="services.html#webdev">Web Development</a></li>
+                </ul>
+              </li>
 
-    <li class="dropdown-sub">
-      <a href="#">Computer Training & Internship ▸</a>
-      <ul class="dropdown-submenu">
-        <li><a href="services.html#basic">Basics to Advanced</a></li>
-        <li><a href="services.html#nontech">Non-Technical</a></li>
-        <li><a href="services.html#tech">Technical</a></li>
-        <li><a href="services.html#accounts">Accounting</a></li>
-        <li><a href="services.html#web">Web Designing</a></li>
-        <li><a href="services.html#multimedia">Multimedia & Animation</a></li>
-      </ul>
-    </li>
+              <li role="none"><a role="menuitem" href="services.html#education">IT Education for Schools &amp; Colleges</a></li>
 
-    <li class="dropdown-sub">
-      <a href="#">Software Development ▸</a>
-      <ul class="dropdown-submenu">
-        <li><a href="services.html#apps">App Development</a></li>
-        <li><a href="services.html#projects">Local & Non-Local Projects</a></li>
-        <li><a href="services.html#programming">Programming Services</a></li>
-        <li><a href="services.html#database">Database Development</a></li>
-        <li><a href="services.html#graphics">Graphics & Animation</a></li>
-        <li><a href="services.html#webdev">Web Development</a></li>
-      </ul>
-    </li>
+              <li class="has-submenu" role="none">
+                <button class="submenu-toggle" aria-expanded="false" aria-controls="submenu-books" aria-haspopup="true">Book Material Making ▸</button>
+                <ul id="submenu-books" class="submenu level-2" role="menu" aria-label="Book Material submenu">
+                  <li role="none"><a role="menuitem" href="services.html#basicbooks">Basic Computer Books</a></li>
+                  <li role="none"><a role="menuitem" href="services.html#nontechbooks">Non-Technical Books</a></li>
+                  <li role="none"><a role="menuitem" href="services.html#techbooks">Technical Books</a></li>
+                  <li role="none"><a role="menuitem" href="services.html#cadbooks">AutoCAD &amp; Accounting Books</a></li>
+                  <li role="none"><a role="menuitem" href="services.html#webbooks">Web Designing Books</a></li>
+                  <li role="none"><a role="menuitem" href="services.html#animbooks">Animation Books</a></li>
+                </ul>
+              </li>
 
-    <li><a href="services.html#education">IT Education for Schools & Colleges</a></li>
+              <li class="has-submenu" role="none">
+                <button class="submenu-toggle" aria-expanded="false" aria-controls="submenu-marketing" aria-haspopup="true">Digital Marketing ▸</button>
+                <ul id="submenu-marketing" class="submenu level-2" role="menu" aria-label="Digital Marketing submenu">
+                  <li role="none"><a role="menuitem" href="services.html#smm">Social Media Marketing</a></li>
+                  <li role="none"><a role="menuitem" href="services.html#appmk">App Marketing</a></li>
+                  <li role="none"><a role="menuitem" href="services.html#webmk">Web Designing &amp; Development</a></li>
+                  <li role="none"><a role="menuitem" href="services.html#ads">Ads Making</a></li>
+                  <li role="none"><a role="menuitem" href="services.html#realestate">Real Estate Marketing</a></li>
+                  <li role="none"><a role="menuitem" href="services.html#sms">Bulk SMS</a></li>
+                </ul>
+              </li>
 
-    <li class="dropdown-sub">
-      <a href="#">Book Material Making ▸</a>
-      <ul class="dropdown-submenu">
-        <li><a href="services.html#basicbooks">Basic Computer Books</a></li>
-        <li><a href="services.html#nontechbooks">Non-Technical Books</a></li>
-        <li><a href="services.html#techbooks">Technical Books</a></li>
-        <li><a href="services.html#cadbooks">AutoCAD & Accounting Books</a></li>
-        <li><a href="services.html#webbooks">Web Designing Books</a></li>
-        <li><a href="services.html#animbooks">Animation Books</a></li>
-      </ul>
-    </li>
+              <li class="has-submenu" role="none">
+                <button class="submenu-toggle" aria-expanded="false" aria-controls="submenu-amc" aria-haspopup="true">Computer Sales &amp; AMC ▸</button>
+                <ul id="submenu-amc" class="submenu level-2" role="menu" aria-label="Sales & AMC submenu">
+                  <li role="none"><a role="menuitem" href="services.html#amc">AMC Services</a></li>
+                  <li role="none"><a role="menuitem" href="services.html#sales">Computer &amp; Printer Sales</a></li>
+                  <li role="none"><a role="menuitem" href="services.html#brand">AIUN Brand Computers</a></li>
+                </ul>
+              </li>
 
-    <li class="dropdown-sub">
-      <a href="#">Digital Marketing ▸</a>
-      <ul class="dropdown-submenu">
-        <li><a href="services.html#smm">Social Media Marketing</a></li>
-        <li><a href="services.html#appmk">App Development</a></li>
-        <li><a href="services.html#webmk">Web Designing & Development</a></li>
-        <li><a href="services.html#ads">Ads Making</a></li>
-        <li><a href="services.html#realestate">Real Estate Marketing</a></li>
-        <li><a href="services.html#sms">Bulk SMS</a></li>
-      </ul>
-    </li>
+              <li role="none"><a role="menuitem" href="services.html#manufacturing">Manufacturing Units</a></li>
+              <li role="none"><a role="menuitem" href="services.html#finance">AIUN Financial Organization</a></li>
+            </ul>
+          </li>
 
-    <li class="dropdown-sub">
-      <a href="#">Computer Sales & AMC ▸</a>
-      <ul class="dropdown-submenu">
-        <li><a href="services.html#amc">AMC Services</a></li>
-        <li><a href="services.html#sales">Computer & Printer Sales</a></li>
-        <li><a href="services.html#brand">AIUN Brand Computers</a></li>
-      </ul>
-    </li>
+          <!-- other top-level links -->
+          <li role="none"><a role="menuitem" href="services.html#software">Software Development</a></li>
+          <li role="none"><a role="menuitem" href="services.html#education">IT Education</a></li>
+          <li role="none"><a role="menuitem" href="services.html#books">Book Material Making</a></li>
+          <li role="none"><a role="menuitem" href="services.html#marketing">Digital Marketing</a></li>
+          <li role="none"><a role="menuitem" href="services.html#amc">Computer Sales &amp; AMC</a></li>
+          <li role="none"><a role="menuitem" href="services.html#manufacturing">Manufacturing Units</a></li>
+          <li role="none"><a role="menuitem" href="services.html#finance">AIUN Financial Organization</a></li>
 
-    <li><a href="services.html#manufacturing">Manufacturing Units</a></li>
-    <li><a href="services.html#finance">AIUN Financial Organization</a></li>
+          <li role="none"><a role="menuitem" href="careers.html" aria-current="page">Careers</a></li>
+          <li role="none"><a role="menuitem" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
 
-  </ul>
-</li>
-
-
-    <li class="dropdown-sub">
-      <a href="#">Software Development ▸</a>
-      <ul class="dropdown-submenu">
-        <li><a href="services.html#apps">App Development</a></li>
-        <li><a href="services.html#projects">Local & Non‑Local Projects</a></li>
-        <li><a href="services.html#programming">Programming</a></li>
-        <li><a href="services.html#database">Database Development</a></li>
-        <li><a href="services.html#graphics">Graphics & Animation</a></li>
-        <li><a href="services.html#webdev">Web Development</a></li>
-      </ul>
-    </li>
-
-    <li><a href="services.html#education">IT Education: Schools & Colleges</a></li>
-
-    <li class="dropdown-sub">
-      <a href="#">Book Material Making ▸</a>
-      <ul class="dropdown-submenu">
-        <li><a href="services.html#basicbooks">Basic Computer Books</a></li>
-        <li><a href="services.html#nontechbooks">Non‑Technical Books</a></li>
-        <li><a href="services.html#techbooks">Technical Books</a></li>
-        <li><a href="services.html#cadbooks">AutoCAD & Accounting</a></li>
-        <li><a href="services.html#webbooks">Web Designing Books</a></li>
-        <li><a href="services.html#animbooks">Animation & Multimedia</a></li>
-      </ul>
-    </li>
-
-    <li class="dropdown-sub">
-      <a href="#">Digital Marketing ▸</a>
-      <ul class="dropdown-submenu">
-        <li><a href="services.html#smm">Social Media</a></li>
-        <li><a href="services.html#appmk">App Development</a></li>
-        <li><a href="services.html#webmk">Web Design</a></li>
-        <li><a href="services.html#ads">Ads Creation</a></li>
-        <li><a href="services.html#realestate">Real Estate</a></li>
-        <li><a href="services.html#sms">Bulk SMS</a></li>
-      </ul>
-    </li>
-
-    <li class="dropdown-sub">
-      <a href="#">Computers & AMC ▸</a>
-      <ul class="dropdown-submenu">
-        <li><a href="services.html#amc">AMC Services</a></li>
-        <li><a href="services.html#sales">Computer & Printer Sales</a></li>
-        <li><a href="services.html#brand">AIUN Brand PCs</a></li>
-      </ul>
-    </li>
-
-    <li><a href="services.html#manufacturing">Manufacturing Units</a></li>
-    <li><a href="services.html#finance">Financial Organization</a></li>
-  </ul>
-</li>
-
-    <li><a href="services.html#software">Software Development</a></li>
-    <li><a href="services.html#education">IT Education: Schools & Colleges</a></li>
-    <li><a href="services.html#books">Book Material Making</a></li>
-    <li><a href="services.html#marketing">Digital Marketing</a></li>
-    <li><a href="services.html#amc">Computer Sales & AMC</a></li>
-    <li><a href="services.html#manufacturing">Manufacturing Units</a></li>
-    <li><a href="services.html#finance">AIUN Financial Organization</a></li>
-  </ul>
-</li>
-
-        <li><a href="careers.html">Careers</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-
-    <div class="actions">
-      <a href="contact.html" class="btn-ghost">Get in touch</a>
-      <a href="services.html" class="btn-primary">Request quote</a>
-      <button class="nav-toggle" aria-label="Open menu">☰</button>
+      <div class="actions">
+        <a href="contact.html" class="btn-ghost">Get in touch</a>
+        <a href="services.html" class="btn-primary">Request quote</a>
+        <button id="navToggle" class="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-  <main class="container section">
+  <main id="main" class="container section" role="main">
     <h1>Careers</h1>
     <p class="lead">Join Aiun IT Labs — a small, fast-moving team building software and training solutions. We hire for culture, curiosity and craftsmanship.</p>
 
@@ -178,14 +122,14 @@
         <li><strong>DevOps / SRE Engineer</strong> — Experience with cloud automation, observability and infrastructure as code.</li>
         <li><strong>Instructional Designer / Trainer</strong> — Experience designing corporate training and hands-on workshops.</li>
       </ul>
-      <p>Can't find your role but want to work with us? Send a resume and short note explaining how you can contribute.</p>
+      <p>Can't find your role but want to work with us? Send a resume and a short note explaining how you can contribute.</p>
     </section>
 
     <section style="margin-top:1rem">
-      <h2>Benefits & culture</h2>
+      <h2>Benefits &amp; culture</h2>
       <ul>
         <li>Flexible work-hours and remote-friendly policies</li>
-        <li>Continuous learning & sponsored training</li>
+        <li>Continuous learning &amp; sponsored training</li>
         <li>Competitive compensation and performance bonuses</li>
       </ul>
     </section>
@@ -197,35 +141,173 @@
   </main>
 
   <footer class="site-footer" role="contentinfo">
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      
-      <p style="max-width:36rem">Aiun IT Labs builds reliable software, cloud infrastructure and corporate training programs that help small and mid-size businesses accelerate product delivery and upskill teams.</p>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <p style="max-width:36rem">Aiun IT Labs builds reliable software, cloud infrastructure and corporate training programs that help small and mid-size businesses accelerate product delivery and upskill teams.</p>
+      </div>
+
+      <div>
+        <h4 style="margin-top:0">Services</h4>
+        <ul style="list-style:none;padding:0;margin:0">
+          <li><a href="services.html">IT Services</a></li>
+          <li><a href="services.html#cloud">Cloud &amp; Infrastructure</a></li>
+          <li><a href="services.html#dev">Product Development</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="margin-top:0">Contact</h4>
+        <p>Email: <a href="mailto:hello@aiunitlabs.com">hello@aiunitlabs.com</a></p>
+        <p>Phone: +91 90000 00000</p>
+        <p style="margin-top:0.6rem"><strong>Office</strong><br/>Visakhapatnam, India</p>
+      </div>
     </div>
 
-    <div>
-      <h4 style="margin-top:0">Services</h4>
-      <ul style="list-style:none;padding:0;margin:0">
-        <li><a href="services.html">IT Services</a></li>
-        <li><a href="services.html#cloud">Cloud & Infrastructure</a></li>
-        <li><a href="services.html#dev">Product Development</a></li>
-        <li><a href="careers.html">Careers</a></li>
-      </ul>
+    <div class="container footer-bottom">
+      <small>© <span id="yr"></span> Aiun IT Labs. All rights reserved.</small>
+      <small><a href="privacy.html" style="color:rgba(255,255,255,0.8)">Privacy</a> · <a href="terms.html" style="color:rgba(255,255,255,0.8)">Terms</a></small>
     </div>
+  </footer>
 
-    <div>
-      <h4 style="margin-top:0">Contact</h4>
-      <p>Email: <a href="mailto:hello@aiunitlabs.com">hello@aiunitlabs.com</a></p>
-      <p>Phone: +91 90000 00000</p>
-      <p style="margin-top:0.6rem"><strong>Office</strong><br/>Visakhapatnam, India</p>
-    </div>
-  </div>
+  <!-- Inline JS: nav behavior, animations-aware, scroll lock, and keyboard nav -->
+  <script>
+    (function () {
+      // FOOTER YEAR
+      const yr = document.getElementById('yr');
+      if (yr) yr.textContent = new Date().getFullYear();
 
-  <div class="container footer-bottom">
-    <small>© <span id="yr"></span> Aiun IT Labs. All rights reserved.</small>
-    <small><a href="privacy.html" style="color:rgba(255,255,255,0.8)">Privacy</a> · <a href="terms.html" style="color:rgba(255,255,255,0.8)">Terms</a></small>
-  </div>
-</footer>
-  <script src="scripts.js"></script>
+      // Elements
+      const nav = document.getElementById('main-nav');
+      const btn = document.getElementById('navToggle');
+      const body = document.body;
+
+      // NAV TOGGLE (mobile) - also lock body scroll when open
+      function setNavVisibility(visible) {
+        if (!nav || !btn) return;
+        nav.dataset.visible = visible ? 'true' : 'false';
+        nav.setAttribute('aria-hidden', String(!visible));
+        btn.setAttribute('aria-expanded', String(visible));
+        if (visible) {
+          body.classList.add('nav-open'); // lock scroll via CSS
+          // focus first menu item for keyboard users
+          const first = nav.querySelector('[role="menuitem"], .submenu-toggle');
+          if (first) first.focus();
+        } else {
+          body.classList.remove('nav-open');
+        }
+      }
+
+      if (btn && nav) {
+        btn.addEventListener('click', function () {
+          setNavVisibility(nav.dataset.visible !== 'true');
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && nav.dataset.visible === 'true') {
+            setNavVisibility(false);
+            btn.focus();
+          }
+        });
+      }
+
+      // SUBMENU TOGGLING + KEYBOARD NAV
+      const submenuToggles = Array.from(document.querySelectorAll('.submenu-toggle'));
+
+      submenuToggles.forEach(toggle => {
+        const parentLi = toggle.closest('.has-submenu');
+        const submenuId = toggle.getAttribute('aria-controls');
+        const submenu = submenuId ? document.getElementById(submenuId) : toggle.nextElementSibling;
+
+        // click toggles
+        toggle.addEventListener('click', function (e) {
+          const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+
+          // close sibling submenus at same level
+          const siblings = parentLi.parentElement ? Array.from(parentLi.parentElement.children) : [];
+          siblings.forEach(sib => {
+            if (sib !== parentLi && sib.classList.contains('has-submenu')) {
+              sib.classList.remove('open');
+              const sibBtn = sib.querySelector('.submenu-toggle');
+              if (sibBtn) sibBtn.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          parentLi.classList.toggle('open', !isOpen);
+          toggle.setAttribute('aria-expanded', String(!isOpen));
+
+          // for desktop flyouts we don't need to manage focus further here, but for
+          // mobile/accordion behavior we move focus into submenu
+          if (!isOpen && submenu) {
+            const firstItem = submenu.querySelector('[role="menuitem"], .submenu-toggle, a');
+            if (firstItem) firstItem.focus();
+          }
+          e.stopPropagation();
+        });
+
+        // keyboard handling for each toggle
+        toggle.addEventListener('keydown', function (e) {
+          const key = e.key;
+          if (key === 'ArrowDown') {
+            // open submenu and focus first item
+            if (toggle.getAttribute('aria-expanded') !== 'true') toggle.click();
+            e.preventDefault();
+          } else if (key === 'ArrowRight') {
+            // if nested submenu exists, open it
+            if (parentLi.classList.contains('has-submenu') && submenu && submenu.classList.contains('level-2')) {
+              if (toggle.getAttribute('aria-expanded') !== 'true') toggle.click();
+              e.preventDefault();
+            }
+          } else if (key === 'Escape') {
+            // close this submenu
+            parentLi.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.focus();
+            e.stopPropagation();
+          }
+        });
+      });
+
+      // Keyboard navigation among menuitems (ArrowUp/ArrowDown)
+      document.querySelectorAll('[role="menubar"], [role="menu"]').forEach(menu => {
+        menu.addEventListener('keydown', function (e) {
+          const key = e.key;
+          const items = Array.from(menu.querySelectorAll('[role="menuitem"], .submenu-toggle'));
+          const active = document.activeElement;
+          const idx = items.indexOf(active);
+          if (key === 'ArrowDown') {
+            e.preventDefault();
+            const next = items[(idx + 1) % items.length] || items[0];
+            next.focus();
+          } else if (key === 'ArrowUp') {
+            e.preventDefault();
+            const prev = items[(idx - 1 + items.length) % items.length] || items[items.length - 1];
+            prev.focus();
+          }
+        });
+      });
+
+      // Close menus when clicking outside
+      document.addEventListener('click', function (e) {
+        document.querySelectorAll('.has-submenu.open').forEach(li => {
+          if (!li.contains(e.target)) {
+            li.classList.remove('open');
+            const btn = li.querySelector('.submenu-toggle');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+
+      // Close submenus on global Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          document.querySelectorAll('.has-submenu.open').forEach(li => {
+            li.classList.remove('open');
+            const btn = li.querySelector('.submenu-toggle');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+          });
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
