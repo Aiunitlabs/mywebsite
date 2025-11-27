@@ -1,3 +1,221 @@
+/* Reset & base improvements */
+:root{
+  --color-primary: #005f9e;
+  --color-primary-600: #007bff;
+  --color-primary-700: #004a7c;
+  --color-dark: #002f5c;
+  --text: #333;
+  --muted-bg: #f9f9f9;
+  --page-bg: #fff;
+  --container-max: 1200px;
+  --gap: 1.5rem;
+  --radius: 8px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--page-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* Utility containers */
+.container {
+  width: 90%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-inline: 1rem; /* keep content away from viewport edges on small screens */
+}
+
+/* Accessibility: skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 0.75rem;
+  background: #000;
+  color: #fff;
+  z-index: 9999;
+  border-radius: 4px;
+}
+
+/* Links, buttons */
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+a:focus,
+a:focus-visible,
+button:focus,
+button:focus-visible {
+  outline: 3px solid #ffd54f;
+  outline-offset: 2px;
+}
+
+/* Header & Navigation */
+.site-header {
+  background: var(--color-primary);
+  padding: 1rem 0;
+  color: #fff;
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+}
+
+/* Logo */
+.logo a {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  display: inline-block;
+}
+
+/* Primary nav */
+.site-nav .nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+.site-nav .nav-list li {
+  list-style: none;
+}
+.site-nav .nav-list a {
+  color: #fff;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  transition: background 150ms ease, color 150ms ease;
+}
+.site-nav .nav-list a:hover,
+.site-nav .nav-list a:focus,
+.site-nav .nav-list a:focus-visible {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+.site-nav .nav-list a[aria-current="page"] {
+  background: rgba(255,255,255,0.12);
+  box-shadow: inset 0 -2px 0 rgba(255,255,255,0.06);
+}
+
+/* Hero */
+.hero {
+  background: var(--color-primary-600);
+  color: #fff;
+  text-align: center;
+  padding: 4rem 0;
+}
+.hero h1 {
+  font-size: clamp(1.6rem, 2.5vw + 1rem, 2.5rem);
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.125rem;
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Sections */
+section {
+  padding: 3rem 0;
+}
+.intro h2,
+.services-summary h2,
+.call-to-action h2 {
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+/* Services grid: use CSS Grid for predictable wrapping */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(240px, 1fr) );
+  gap: 2rem;
+}
+
+/* Card */
+.card {
+  background: var(--muted-bg);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.card:hover,
+.card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+}
+
+/* Call to action */
+.call-to-action {
+  text-align: center;
+  background: #f6f7f8;
+  border-radius: var(--radius);
+  padding: 2rem;
+}
+.call-to-action .btn {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: background 0.25s ease, transform 120ms ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+.call-to-action .btn:hover,
+.call-to-action .btn:focus,
+.call-to-action .btn:focus-visible {
+  background: var(--color-primary-700);
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.site-footer {
+  background: var(--color-dark);
+  color: #fff;
+  text-align: center;
+  padding: 2rem 0;
 /* Existing variables & base (keep your previous rules above these additions) */
 /* --- animations, scroll-lock and refined submenu animations --- */
 
@@ -183,6 +401,40 @@ body.nav-open {
 /* a little accessible focus polish */
 .submenu a:focus,
 .submenu button:focus {
+  outline: 3px solid #ffd54f;
+  outline-offset: 2px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .site-nav .nav-list {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  .hero {
+    padding: 3rem 0;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  section {
+    padding: 2rem 0;
+  }
+}
+
+/* High-contrast / keyboard focus helpers for accessibility */
+:focus-visible {
   outline: 3px solid #ffd54f;
   outline-offset: 2px;
 }
