@@ -216,6 +216,193 @@ section {
   color: #fff;
   text-align: center;
   padding: 2rem 0;
+/* Existing variables & base (keep your previous rules above these additions) */
+/* --- animations, scroll-lock and refined submenu animations --- */
+
+:root {
+  --submenu-fade-dur: 220ms;
+  --submenu-slide-dur: 200ms;
+  --submenu-ease: cubic-bezier(.2,.9,.2,1);
+}
+
+/* Body scroll lock while mobile nav open */
+body.nav-open {
+  overflow: hidden;
+  touch-action: none; /* helps on mobile to prevent scrolling */
+  height: 100vh;
+}
+
+/* Submenu: base for desktop flyouts (positioned, animate opacity & translate) */
+.submenu {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 8px);
+  min-width: 16rem;
+  background: #fff;
+  color: #222;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(13, 38, 76, 0.12);
+  padding: 0.25rem 0;
+  display: block; /* keep in flow but hidden via opacity/transform/pointer-events */
+  opacity: 0;
+  transform: translateY(-6px) scale(0.99);
+  pointer-events: none;
+  transition:
+    opacity var(--submenu-fade-dur) var(--submenu-ease),
+    transform var(--submenu-slide-dur) var(--submenu-ease);
+  z-index: 1000;
+}
+
+/* level-2 submenus float to the right of their parent on desktop */
+.submenu.level-2 {
+  left: 100%;
+  top: 0;
+  margin-left: 8px;
+  min-width: 14rem;
+}
+
+/* When open show with animation (desktop) */
+.has-submenu.open > .submenu,
+.nav-list > .has-submenu:hover > .submenu,
+.nav-list > .has-submenu:focus-within > .submenu {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* Submenu item styles */
+.submenu > li,
+.submenu .submenu > li {
+  list-style: none;
+}
+.submenu a,
+.submenu button.submenu-toggle {
+  display: block;
+  padding: 0.55rem 1rem;
+  color: #0b2a4a;
+  text-align: left;
+  background: transparent;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+.submenu a:hover,
+.submenu button.submenu-toggle:hover,
+.submenu a:focus,
+.submenu button.submenu-toggle:focus {
+  background: rgba(0,95,158,0.06);
+  outline: none;
+}
+
+/* Desktop: ensure top-level submenu toggles look like links */
+@media (min-width: 769px) {
+  .nav-list > li > .submenu-toggle {
+    background: transparent;
+    color: #fff;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .nav-list > li > a {
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    font-weight: 600;
+  }
+}
+
+/* MOBILE: use accordion style + animate using max-height for smooth open/close */
+@media (max-width: 768px) {
+  .main-nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 8px);
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 12px 36px rgba(2,12,27,0.12);
+    padding: 0.5rem;
+    display: none;
+    max-height: calc(100vh - 90px);
+    overflow: auto;
+  }
+  .main-nav[data-visible="true"] {
+    display: block;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  /* mobile submenu - use max-height to animate (accordion) */
+  .submenu {
+    position: static;
+    box-shadow: none;
+    background: transparent;
+    padding-left: 0.5rem;
+    opacity: 1; /* keep visible; control showing with max-height */
+    transform: none;
+    transition: max-height 260ms var(--submenu-ease), opacity 160ms linear;
+    overflow: hidden;
+    max-height: 0;
+  }
+  .submenu.level-2 { padding-left: 1rem; }
+
+  /* when open, allow big max height (enough for the content) */
+  .has-submenu.open > .submenu,
+  .submenu-toggle[aria-expanded="true"] + .submenu {
+    max-height: 720px; /* high enough for content; transition animates */
+  }
+
+  /* mobile submenu toggles & links styling */
+  .nav-list > li > a,
+  .nav-list > li > .submenu-toggle {
+    color: #0b2a4a;
+    padding: 0.6rem 0.75rem;
+    border-radius: 6px;
+    display: block;
+    text-align: left;
+  }
+}
+
+/* small polish: arrow indicator for nested toggles */
+.has-submenu > .submenu-toggle::after {
+  content: " ▸";
+  float: right;
+  opacity: 0.75;
+  transition: transform 180ms ease;
+}
+.has-submenu.open > .submenu-toggle::after,
+.submenu-toggle[aria-expanded="true"]::after {
+  transform: rotate(90deg);
+}
+
+/* Nav toggle button style (hamburger) */
+.nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.08);
+  color: #fff;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.nav-toggle:focus,
+.nav-toggle:focus-visible {
+  outline: 3px solid #ffd54f;
+  outline-offset: 2px;
+}
+
+/* a little accessible focus polish */
+.submenu a:focus,
+.submenu button:focus {
+  outline: 3px solid #ffd54f;
+  outline-offset: 2px;
 }
 
 /* Responsive tweaks */

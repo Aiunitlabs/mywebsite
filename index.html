@@ -3,18 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aiun IT Labs — digital solutions: web development, digital marketing, and IT consulting.">
   <title>Aiun IT Labs — Home</title>
+  <link rel="icon" href="favicon.ico" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
   <header class="site-header">
     <div class="container header-inner">
       <div class="logo">
         <a href="index.html">Aiun IT Labs</a>
       </div>
-      <nav class="site-nav">
+      <nav class="site-nav" aria-label="Primary navigation">
         <ul class="nav-list">
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="careers.html">Careers</a></li>
@@ -24,53 +28,61 @@
     </div>
   </header>
 
-  <main>
-    <section class="hero">
+  <main id="main-content">
+    <section class="hero" aria-labelledby="hero-heading">
       <div class="container">
-        <h1>Welcome to Aiun IT Labs</h1>
+        <h1 id="hero-heading">Welcome to Aiun IT Labs</h1>
         <p>Your partner in digital solutions and growth.</p>
       </div>
     </section>
 
-    <section class="intro">
+    <section class="intro" aria-labelledby="who-we-are">
       <div class="container">
-        <h2>Who We Are</h2>
-        <p>Aiun IT Labs is dedicated to delivering cutting-edge IT & digital services — from web development to marketing solutions. We believe in strong client relationships, innovative design, and quality delivery.</p>
+        <h2 id="who-we-are">Who We Are</h2>
+        <p>Aiun IT Labs is dedicated to delivering cutting-edge IT and digital services — from web development to marketing solutions. We believe in strong client relationships, innovative design, and quality delivery.</p>
       </div>
     </section>
 
-    <section class="services-summary">
+    <section class="services-summary" aria-labelledby="services-heading">
       <div class="container">
-        <h2>Our Services</h2>
+        <h2 id="services-heading">Our Services</h2>
         <div class="grid services-grid">
-          <div class="card">
-            <h3>Web Development</h3>
+          <article class="card" aria-labelledby="svc-webdev">
+            <h3 id="svc-webdev">Web Development</h3>
             <p>Responsive, modern websites that perform.</p>
-          </div>
-          <div class="card">
-            <h3>Digital Marketing</h3>
+          </article>
+          <article class="card" aria-labelledby="svc-marketing">
+            <h3 id="svc-marketing">Digital Marketing</h3>
             <p>Grow your online presence and reach.</p>
-          </div>
-          <div class="card">
-            <h3>Consulting & Support</h3>
+          </article>
+          <article class="card" aria-labelledby="svc-consulting">
+            <h3 id="svc-consulting">Consulting &amp; Support</h3>
             <p>Expert guidance and ongoing maintenance.</p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="call-to-action">
+    <section class="call-to-action" aria-labelledby="cta-heading">
       <div class="container">
-        <h2>Ready to start a project?</h2>
+        <h2 id="cta-heading">Ready to start a project?</h2>
         <a href="contact.html" class="btn">Get in Touch</a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="container">
-      <p>&copy; 2025 Aiun IT Labs. All rights reserved.</p>
+      <p>&copy; <span id="year">2025</span> Aiun IT Labs. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    // Keep the footer year current
+    (function () {
+      var yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    })();
+  </script>
 </body>
 </html>
